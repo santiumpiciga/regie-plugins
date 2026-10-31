@@ -1,0 +1,24 @@
+name: CI
+
+# Que los dos plugins compilen y se empaqueten, en cada cambio. Un Release
+# nuevo sale con release.yml al subir un tag vX.Y.Z.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  empaquetar:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Compilar y empaquetar (CS2: dotnet build; CS 1.6: amxxpc)
+        shell: pwsh
+        run: ./scripts/empaquetar.ps1 -Tag ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paquetes
+          path: dist/

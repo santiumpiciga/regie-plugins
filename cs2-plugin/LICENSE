@@ -1,0 +1,33 @@
+Copyright (C) 2026 Santiago Umpierrez
+
+Este programa es software libre: usted puede redistribuirlo y/o
+modificarlo bajo los términos de la Licencia Pública General GNU
+publicada por la Free Software Foundation, ya sea la versión 3 de la
+Licencia o (a su elección) cualquier versión posterior.
+
+Este programa se distribuye con la esperanza de que sea útil, pero SIN
+NINGUNA GARANTÍA; ni siquiera la garantía implícita de COMERCIABILIDAD o
+APTITUD PARA UN PROPÓSITO DETERMINADO. Vea la Licencia Pública General
+GNU para más detalles.
+
+El texto completo de la licencia es GPL-3.0.txt (copiado de
+<https://www.gnu.org/licenses/gpl-3.0.txt>). Va en cada Release de
+https://github.com/santiumpiciga/regie-plugins junto con el plugin
+compilado y su código fuente, y el instalador de Regie.gg lo deja al lado
+del .dll al instalar el plugin: la GPL pide que el texto completo
+acompañe al programa, y un enlace no alcanza.
+
+---
+
+POR QUÉ ESTA CARPETA ES GPL Y EL RESTO DEL PROYECTO NO
+
+El resto de Regie.gg es propietario.
+Esta carpeta es la excepción, y no por preferencia:
+este plugin se
+compila contra CounterStrikeSharp, que es GPL-3.0, y un plugin
+construido sobre una base GPL se suele considerar obra derivada.
+
+El plugin corre DENTRO del servidor dedicado de CS2, no dentro de la
+aplicación, y le habla por TCP y por RCON. Esa separación por protocolo
+es lo que mantiene al resto del proyecto fuera del alcance de esta
+licencia. Ver TERCEROS.md.

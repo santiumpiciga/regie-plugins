@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Cs2LiveViewerHelper</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Misma versión que usa MatchZy (confirmado en su .csproj real);
+         no hace falta que coincida exacto con el build instalado, la API
+         pública de CounterStrikeSharp es estable entre parches menores. -->
+    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.342">
+      <PrivateAssets>none</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

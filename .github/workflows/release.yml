@@ -1,0 +1,35 @@
+name: Release
+
+# Al subir un tag vX.Y.Z se compilan los dos plugins y se publica un Release
+# con los paquetes, sus huellas SHA-256 y, por ser GPL, el código fuente
+# (adentro de cada zip y, aparte, el que GitHub arma del tag). Regie.gg baja
+# cada Release por su tag fijo y verifica la huella.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Compilar y empaquetar
+        shell: pwsh
+        run: ./scripts/empaquetar.ps1 -Tag "${{ github.ref_name }}"
+      - name: Publicar el Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" `
+            "dist/regie-cs2-plugin-${{ github.ref_name }}.zip" `
+            "dist/regie-cs16-plugin-${{ github.ref_name }}.zip" `
+            "dist/SHA256SUMS.txt" `
+            --title "${{ github.ref_name }}" `
+            --notes-file RELEASE-NOTES.md
