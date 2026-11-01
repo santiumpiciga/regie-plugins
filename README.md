@@ -21,13 +21,13 @@ propio `LICENSE` con el aviso.
 
 Cada Release (`vX.Y.Z`) trae:
 
-- `regie-cs2-plugin-vX.Y.Z.zip`: `Cs2LiveViewerHelper.dll`, `.deps.json`, la licencia y `fuente/`.
+- `regie-cs2-plugin-vX.Y.Z.zip`: `RegieGG.dll`, `.deps.json`, la licencia y `fuente/`.
 - `regie-cs16-plugin-vX.Y.Z.zip`: `RegieGG.amxx` y `fuente/` (el `.sma`, los `.inc` y la licencia).
 - `SHA256SUMS.txt`: la huella de cada zip.
 
 Cada versión de Regie.gg baja **un Release fijo** (no «el último») y verifica
 la huella. Quien instala los plugins a mano: el `.dll` va en
-`game/csgo/addons/counterstrikesharp/plugins/Cs2LiveViewerHelper/` y el `.amxx`
+`game/csgo/addons/counterstrikesharp/plugins/RegieGG/` y el `.amxx`
 en `cstrike/addons/amxmodx/plugins/` (más su línea en `configs/plugins.ini`).
 
 ## Compilar

@@ -15,7 +15,7 @@ using CounterStrikeSharp.API.Modules.Utils;
 namespace Cs2LiveViewerHelper;
 
 // Config del plugin. CounterStrikeSharp la lee/crea sola en
-// game/csgo/addons/counterstrikesharp/configs/plugins/Cs2LiveViewerHelper/Cs2LiveViewerHelper.json
+// game/csgo/addons/counterstrikesharp/configs/plugins/RegieGG/RegieGG.json
 public class DirectorConfig : BasePluginConfig
 {
     [JsonPropertyName("director_enabled")] public bool DirectorEnabled { get; set; } = true;

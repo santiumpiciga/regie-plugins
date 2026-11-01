@@ -70,7 +70,7 @@ llega por las dos vías (`backend/src/routes/webhook.ts`).
   `<plugin>/outbox/<puerto de juego>/*.json` y se reintenta cada 10 s en orden (lo que
   MatchZy no hace). Se descarta si el backend contesta 4xx (salvo
   408/429) y después de 7 días.
-- **Config** (`configs/plugins/Cs2LiveViewerHelper/Cs2LiveViewerHelper.json`):
+- **Config** (`configs/plugins/RegieGG/RegieGG.json`):
   `match_events_enabled` (default `true`) y `match_events_url` (default
   vacío = la URL del match cargado en MatchZy; ponerla solo si el
   backend escucha en otra dirección que la del webhook de MatchZy).
@@ -233,10 +233,11 @@ SteamID real de los jugadores conectados". Requiere tener el [SDK de
 .NET](https://dotnet.microsoft.com/download) instalado (no hace falta
 para nada más de este proyecto) -- el botón compila este proyecto
 (`dotnet build -c Release`) y copia el `.dll` resultante a
-`<csgo>/addons/counterstrikesharp/plugins/Cs2LiveViewerHelper/`.
+`<csgo>/addons/counterstrikesharp/plugins/RegieGG/` (antes `Cs2LiveViewerHelper/`: al instalar, la carpeta
+vieja se borra y su config pasa a `configs/plugins/RegieGG/`).
 
 Para que cargue hace falta (re)iniciar el servidor, o correr
-`css_plugins load Cs2LiveViewerHelper` por RCON si ya está corriendo.
+`css_plugins load RegieGG` por RCON si ya está corriendo.
 Lo mismo para actualizarlo: el `.dll` cargado está bloqueado por el
 proceso, así que instalar una versión nueva pide parar el servidor
 (no hacerlo con un partido en curso).

@@ -16,7 +16,7 @@ namespace Cs2LiveViewerHelper;
 public class Cs2LiveViewerHelperPlugin : BasePlugin, IPluginConfig<DirectorConfig>
 {
     // Config del feed del director (ver DirectorFeed.cs). CounterStrikeSharp
-    // la deserializa desde configs/plugins/Cs2LiveViewerHelper/Cs2LiveViewerHelper.json
+    // la deserializa desde configs/plugins/RegieGG/RegieGG.json
     // y llama a OnConfigParsed antes de Load.
     public DirectorConfig Config { get; set; } = new();
     private DirectorFeed? _director;

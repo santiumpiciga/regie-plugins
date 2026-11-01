@@ -4,7 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>Cs2LiveViewerHelper</AssemblyName>
+    <!-- El nombre que ve el usuario en plugins/ del servidor; el resto del
+         código sigue con los nombres de siempre (desktop/installer.js). -->
+    <AssemblyName>RegieGG</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

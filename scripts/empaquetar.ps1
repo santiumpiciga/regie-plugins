@@ -1,6 +1,6 @@
 # Compila los dos plugins y arma los paquetes de un Release:
 #
-#   dist/regie-cs2-plugin-<Tag>.zip    Cs2LiveViewerHelper.dll, .deps.json, LICENSE,
+#   dist/regie-cs2-plugin-<Tag>.zip    RegieGG.dll, .deps.json, LICENSE,
 #                                      GPL-3.0.txt y fuente/ (el código y el .csproj)
 #   dist/regie-cs16-plugin-<Tag>.zip   RegieGG.amxx y fuente/ (.sma, .inc, LICENSE, GPL-3.0.txt)
 #   dist/SHA256SUMS.txt                la huella de cada zip
@@ -57,7 +57,7 @@ try {
   $bin = Join-Path $raiz 'cs2-plugin\bin\Release\net8.0'
   $cs2 = Join-Path $trabajo 'cs2'
   New-Item -ItemType Directory -Force (Join-Path $cs2 'fuente') | Out-Null
-  foreach ($f in 'Cs2LiveViewerHelper.dll', 'Cs2LiveViewerHelper.deps.json') {
+  foreach ($f in 'RegieGG.dll', 'RegieGG.deps.json') {
     Copy-Item (Join-Path $bin $f) $cs2
   }
   Copy-Item (Join-Path $raiz 'cs2-plugin\LICENSE') $cs2
